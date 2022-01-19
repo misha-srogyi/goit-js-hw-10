@@ -18,10 +18,8 @@ function onInput(evt) {
     const country = evt.target.value.trim();
     console.log(country);
     clearInputValue();
-    if (country === "") {
-        return;
-    }
-
+    if (!country) return;
+    
     fetchCountries(country)
         .then(names => {
             if (names.length > 10) {
